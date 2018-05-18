@@ -1,0 +1,18 @@
+---
+permalink: matches.ics
+layout: none
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//world-cup-calendar.fcingolani.com.ar//World Cup Calendar//EN
+METHOD:PUBLISH
+{% for match in site.data.matches %}BEGIN:VEVENT
+UID:{{ match.date | date: "%s" }}-{{ forloop.index }}@world-cup-calendar.fcingolani.com.ar
+LOCATION:{{ match.location }}
+SUMMARY:{{ match.home }} vs {{ match.away }}
+CLASS:PUBLIC
+DTSTART:{{ match.date | date: "%Y%m%dT%H%M%S"  }}Z
+DTEND:{{ match.date | date: "%Y%m%dT%H%M%S"  }}Z
+DTSTAMP:{{ match.date | date: "%Y%m%dT%H%M%S"  }}Z
+END:VEVENT
+{% endfor %}END:VCALENDAR
