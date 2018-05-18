@@ -16,5 +16,6 @@ CLASS:PUBLIC
 DTSTART:{{ match.date | date: "%Y%m%dT%H%M%S"  }}Z
 DTEND:{{ match.date | date: "%Y%m%dT%H%M%S"  }}Z
 DTSTAMP:{{ match.date | date: "%Y%m%dT%H%M%S"  }}Z
+SEQUENCE:{{ site.time | date: "%s" }}
 END:VEVENT
 {% endfor %}END:VCALENDAR
