@@ -1,5 +1,4 @@
 ---
-
 permalink: matches.ics
 layout: none
 ---
@@ -12,7 +11,7 @@ METHOD:PUBLISH
 {% for match in site.data.matches %}BEGIN:VEVENT
 UID:{{ match.date | date: "%s" }}-{{ forloop.index }}@world-cup-calendar.fcingolani.com.ar
 LOCATION:{{ match.location }}
-SUMMARY:{{ match.home }} vs {{ match.away }} - {% if match.group %}{{match.group}}{%else%}{{match.r}}{%endif%}
+SUMMARY:{{ match.home }} vs {{ match.away }} - {% if match.group %}{{match.group}}{%else%}{{match.r}}{%endif%} - Match {{forloop.index}}
 CLASS:PUBLIC
 DTSTART:{{ match.date | date: "%Y%m%dT%H%M%S"  }}Z
 DTEND:{{ match.date | date: "%Y%m%dT%H%M%S"  }}Z
