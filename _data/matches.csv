@@ -1,4 +1,4 @@
-round,date,location,home,away,group,result
+r,date,location,home,away,group,result
 1,2018-06-14 15:00:00 +0000,"Luzhniki Stadium, Moscow",Russia,Saudi Arabia,Group A,
 1,2018-06-15 12:00:00 +0000,Ekaterinburg Stadium,Egypt,Uruguay,Group A,
 1,2018-06-15 15:00:00 +0000,Saint Petersburg Stadium,Morocco,Iran,Group B,
