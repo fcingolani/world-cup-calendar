@@ -8,10 +8,10 @@ PRODID:-//world-cup-calendar.fcingolani.com.ar//World Cup Calendar//EN
 URL:http://fcingolani.com.ar/world-cup-calendar/matches.ics
 NAME:World Cup Calendar
 METHOD:PUBLISH
-{% for match in site.data.matches %}BEGIN:VEVENT
+{% for match in site.data.matches %}BEGIN:VEVENT{% assign home = site.data.teams[match.home] %}{% assign away = site.data.teams[match.away] %}
 UID:{{ match.date | date: "%s" }}-{{ forloop.index }}@world-cup-calendar.fcingolani.com.ar
 LOCATION:{{ match.location }}
-SUMMARY:{{ match.home }} vs {{ match.away }} - {% if match.group %}{{match.group}}{%else%}{{match.r}}{%endif%} - Match {{forloop.index}}
+SUMMARY:{{ home.emoji }} {{ match.home }} vs {{ match.away }} {{ away.emoji }} - {% if match.group %}{{match.group}}{%else%}{{match.r}}{%endif%} - Match {{forloop.index}}
 CLASS:PUBLIC
 DTSTART:{{ match.date | date: "%Y%m%dT%H%M%S"  }}Z
 DTEND:{{ match.date | date: "%Y%m%dT%H%M%S"  }}Z
